@@ -13,13 +13,13 @@ interface AuthService {
     @POST("/auth/register")
     suspend fun register(@Body data: RegisterRequest): Boolean
 
+    @POST("/auth/register/confirm")
+    suspend fun confirm(@Body data: ConfirmRegisterRequest): Boolean
+
     @POST("/auth/login")
     suspend fun login(@Body data: LoginRequest): Boolean
 
     @POST("/auth/otp")
     suspend fun otp(@Body data: OtpRequest): Boolean
-
-//    @POST("/auth/verify/{token}")
-//    suspend fun verify(@Path("token") token String): Response<Boolean>
 
 }
